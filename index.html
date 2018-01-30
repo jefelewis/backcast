@@ -30,7 +30,7 @@
   <script>
     backboneReady(() => {
       // Create new video though the Videos Constructor
-      var videos = new videos(exampleVideoData);
+      var videos = new Videos(window.exampleVideoData);
       new AppView({el: $('#app'), collection: videos}).render();
     });
   </script>

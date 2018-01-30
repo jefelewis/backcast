@@ -10,6 +10,6 @@ var VideoPlayerView = Backbone.View.extend({
     return this;
   },
 
-  template: templateURL('src/templates/videoPlayer.html')
+  template: templateURL('src/templates/videoPlayer.html'),
 
 });
