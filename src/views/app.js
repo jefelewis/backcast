@@ -1,38 +1,37 @@
 var AppView = Backbone.View.extend({
 
   el: '#app',
-  // Add Video Data URL
-  // url: 'src/views/exampleVideoData.js',
 
   initialize: function() {
+    // On initialization, pass exampleVideoData to the new Videos Collection
     this.videos = new Videos(window.exampleVideoData);
     this.render();
-    console.log('initialize');
-    console.log('here is this .videos,', this.videos.models[0]);
   },
 
   render: function() {
     this.$el.html(this.template());
 
-    // Video List View
+    // Video List View (Module)
     new VideoListView({
+      // Assign this.videos (window.exampleVideoData) as the Collection
       collection: this.videos,
+      // Assign Class from app.html as the Element
       el: this.$('.list')
     }).render();
-    console.log('render been called');
 
-    // Search View
+    // Search View (Module)
     new SearchView({
+      // Assign Class from app.html as the Element
       el: this.$('.search')
     }).render();
 
-    // Video Player View
+    // Video Player View (Module)
     new VideoPlayerView({
+      // Assign this.videos (window.exampleVideoData) as the Collection
       collection: this.videos,
-      // video: this.videos.at(0),
+      // Assign Class from app.html as the Element
       el: this.$('.player')
     }).render();
-
 
   },
 
