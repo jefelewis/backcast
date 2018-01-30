@@ -8,7 +8,7 @@ var VideoPlayerView = Backbone.View.extend({
   },
 
   render: function() {
-    // 
+    // Assigns the first item (video) in the collection to the video player
     this.$el.html(this.template(this.collection.models[0].attributes));
     return this;
   },
