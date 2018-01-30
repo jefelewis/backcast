@@ -8,8 +8,10 @@ var VideoListView = Backbone.View.extend({
   },
 
   render: function() {
+    // Given: But what do these two lines do?
     this.$el.children().detach();
     this.$el.html(this.template());
+
     // Iterate through the collection data
     this.collection.each(function (element) {
       // Append the collection data to the video list class from videoList.html
