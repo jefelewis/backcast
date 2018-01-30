@@ -11,12 +11,12 @@ var VideoListView = Backbone.View.extend({
     this.$el.children().detach();
     this.$el.html(this.template());
     // Iterate through the collection data
-    this.collection.each(function (video) {
+    this.collection.each(function (element) {
       // Append the collection data to the video list class from videoList.html
       this.$('.video-list').append(
         // Use VideoListEntryView View to pass the video through
         new VideoListEntryView({
-          model: video
+          model: element
         // Why .el?
         }).render().el  
       );

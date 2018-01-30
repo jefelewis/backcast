@@ -8,6 +8,7 @@ var AppView = Backbone.View.extend({
     this.render();
   },
 
+  // Render all of the Views (VideoListView, SearchView, VideoPlayer View)
   render: function() {
     this.$el.html(this.template());
 
@@ -15,13 +16,13 @@ var AppView = Backbone.View.extend({
     new VideoListView({
       // Assign this.videos (window.exampleVideoData) as the Collection
       collection: this.videos,
-      // Assign Class from app.html as the Element
+      // Assign Class from templates/app.html as the Element
       el: this.$('.list')
     }).render();
 
     // Search View (Module)
     new SearchView({
-      // Assign Class from app.html as the Element
+      // Assign Class from templates/app.html as the Element
       el: this.$('.search')
     }).render();
 
@@ -29,7 +30,7 @@ var AppView = Backbone.View.extend({
     new VideoPlayerView({
       // Assign this.videos (window.exampleVideoData) as the Collection
       collection: this.videos,
-      // Assign Class from app.html as the Element
+      // Assign Class from templates/app.html as the Element
       el: this.$('.player')
     }).render();
 
