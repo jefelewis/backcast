@@ -6,6 +6,7 @@ var SearchView = Backbone.View.extend({
   },
 
   render: function() {
+    // console.log('here is this.el', this.$el)
     this.$el.html(this.template());
     return this;
   },

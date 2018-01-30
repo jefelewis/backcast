@@ -3,10 +3,14 @@ var VideoPlayerView = Backbone.View.extend({
   // Initialze Application
   initialze: function() {
     this.render();
+    this.collection.on('sync', this.render, this);
+    // this.video.on('sync', this.render, this);
   },
 
   render: function() {
-    this.$el.html('<div class="loading">Please wait...</div>');
+  // console.log('inside of VideoPlayerView this is this.video',  this.collection.models[0])
+    // console.log('inside of VideoPlayerView')
+    this.$el.html(this.template(this.collection.models[0].attributes));
     return this;
   },
 
